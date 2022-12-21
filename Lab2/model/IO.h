@@ -68,6 +68,7 @@ SC_MODULE(IO) {
 	void result_predict()
 	{
 		while (!wr_i.read()) wait();
+		cout << sc_time_stamp() << endl;
 		for (int i(0); i < 3; i++)
 		{
 			prediction[i] = data_i[i].read();
@@ -78,6 +79,7 @@ SC_MODULE(IO) {
 		}
 		cout << endl;
 		parsing_result(convert(prediction));
+		cout << endl;
 	}
 
 	// input main thread
@@ -86,28 +88,24 @@ SC_MODULE(IO) {
 		for (int i = 0; i < 140; i++) wait();
 		//SQUARE
 		send_data("data/test_square.txt");
-		cout << endl;
+		cout << sc_time_stamp() << "  SQUARE" << endl;
 		wr_o.write(1);
-		wait();
-		cout << sc_time_stamp() << "  SQUARE"<<endl;
+		wait();		
 		//CIRCLE
 		send_data("data/test_circle.txt");
-		wait();
-		cout << sc_time_stamp() <<"  CIRCLE"<< endl;
+		cout << sc_time_stamp() << "  CIRCLE" << endl;
+		wait();		
 		//TRIANGLE
 		send_data("data/test_triangle.txt");
-		wait();
-		cout << sc_time_stamp() <<"  TRIANGLE"<< endl;
+		cout << sc_time_stamp() << "  TRIANGLE" << endl;
+		wait();		
 		wr_o.write(0);
 		wait();
 		cout << endl << "PREDICTION: " << endl;
-		cout << endl<<sc_time_stamp() << endl;
 		result_predict();		
 		wait();
-		cout << endl << sc_time_stamp() << endl;
 		result_predict();
 		wait();
-		cout << endl << sc_time_stamp() << endl;
 		result_predict();
 		wait();
 	}

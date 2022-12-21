@@ -39,7 +39,6 @@ SC_MODULE(bus) {
 	sc_in<bool> wr_i_corelast;
 	sc_in<bool> rd_i_corelast;
 	sc_in<int> addr_i_corelast;
-	//sc_out<bool> wr_o_corelast;
 	sc_in<float> data_i_corelast[3];
 	sc_out<float> data_ow_corelast[30];
 
