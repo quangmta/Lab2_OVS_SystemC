@@ -39,7 +39,7 @@ SC_MODULE(core_last) {
 		//wr_bo.write(0);
 	}
 
-	// core main thread
+	// core main method
 	void input_read()
 	{
 		if (wr_ci[0].read() && wr_ci[1].read() && wr_ci[2].read())
@@ -62,6 +62,7 @@ SC_MODULE(core_last) {
 		}
 
 	}
+	//core main thread
 	void weight_read() {
 		for (int i = 0; i < 120; i++) wait();
 		for (int i(0); i < 3; i++)
@@ -79,12 +80,6 @@ SC_MODULE(core_last) {
 			}
 		}
 		//cout << weight[0][0];
-
-		//for (int i = 0; i < 10; i++) wait();
-		//data_bo.write(0);
-		//addr_bo.write(0);
-		//wr_o.write(0);
-
 	}
 
 

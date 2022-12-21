@@ -19,7 +19,7 @@ SC_MODULE(core) {
 	int core_num;
 
 
-	// core main thread
+	// core main method
 	void input_read()
 	{
 		if (wr_ci.read())
@@ -50,6 +50,7 @@ SC_MODULE(core) {
 		}
 
 	}
+	//core main thread
 	void weight_read() {
 		for (int i = 0; i < (core_num - 1) * 40; i++) wait();
 		for (int i(0); i < 10; i++)
