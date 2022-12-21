@@ -50,6 +50,7 @@ SC_MODULE(IO) {
 
 		else
 			cout << "CAN'T RECOGNIZE";
+		cout << endl;
 	}
 	void send_data(string file_name)
 	{		
@@ -100,14 +101,14 @@ SC_MODULE(IO) {
 		wr_o.write(0);
 		wait();
 		cout << endl << "PREDICTION: " << endl;
-		result_predict();
-		cout <<"  "<< sc_time_stamp() << endl << endl;
+		cout << endl<<sc_time_stamp() << endl;
+		result_predict();		
 		wait();
+		cout << endl << sc_time_stamp() << endl;
 		result_predict();
-		cout << "  " << sc_time_stamp() << endl<<endl;
 		wait();
+		cout << endl << sc_time_stamp() << endl;
 		result_predict();
-		cout << "  " << sc_time_stamp() << endl<<endl;
 		wait();
 	}
 
