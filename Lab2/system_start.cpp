@@ -232,18 +232,8 @@ int sc_main(int argc, char* argv[]) {
 
 	//sc_trace_file *wf = sc_create_vcd_trace_file("wave");
 
-
 	cout << endl << "_________________________" << endl << endl << "Calculating..." << endl << "_________________________" << endl;
 	sc_start(sc_time(4000, SC_NS));
-	
-	//core_last.get_prediction();
-	//core2.get_prediction();
-	//core3.get_prediction();
-
-
-	//cout << endl << "RESULT IS: ";
-	////out_module.parsing_result(out_module.get_out());
-	//cout << endl << endl << endl;
 
 	//sc_close_vcd_trace_file(wf);
 	
